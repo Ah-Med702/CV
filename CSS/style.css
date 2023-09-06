@@ -185,9 +185,6 @@ nav .navbar-toggler .nav-toggler-icon::after {
   height: 20px;
   background-color: var(--primary-color);
 }
-.projects-container .content .project .project-name {
-  color: var(--primary-color);
-}
 .projects-container .content .project .heading {
   position: relative;
 }
@@ -199,11 +196,47 @@ nav .navbar-toggler .nav-toggler-icon::after {
   position: absolute;
   left: -28px;
 }
+.projects-container .content .project .heading .project-name {
+  color: var(--primary-color);
+}
+.projects-container .content .project .heading .project-name-placeholder {
+  width: 50%;
+  height: 40px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  animation: change-color 2s infinite linear;
+}
 .projects-container .content .project .heading .project-link {
   cursor: pointer;
   text-decoration: none;
 }
+.projects-container .content .project .heading .project-link-placeholder {
+  width: 70%;
+  height: 40px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  animation: change-color 2s infinite linear;
+}
+.projects-container .content .project .card-text-placeholder {
+  width: 90%;
+  height: 80px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  animation: change-color 2s infinite linear;
+}
+.projects-container .content .project .img-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  animation: change-color 2s infinite linear;
+}
 
+@keyframes change-color {
+  50% {
+    background-color: rgba(230, 218, 206, 0.768627451);
+  }
+}
 @media (max-width: 767px) {
   .projects-container .content {
     width: 90%;
