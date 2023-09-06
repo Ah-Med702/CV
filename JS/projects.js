@@ -1,72 +1,97 @@
-const projectsContainer = document.querySelector(".projects-container .content");
+const projectsContainer = document.querySelector(
+    ".projects-container .content"
+);
 
-fetch("/API/projects.json")
-    .then((res) => {
-        return res.json();
-    })
-    .then((res) => {
-        const resultArray = res.data;
-        resultArray.forEach((result) => {
-            const project = document.createElement("div");
-            project.className = "project w-100";
+(() => {
+    try {
+        fetch("/API/projects.json")
+            .then((res) => {
+                return res.json();
+            })
+            .then((res) => {
+                const resultArray = res.data;
+                resultArray.forEach((result) => {
+                    const namePlaceholder = document.createElement("div");
+                    namePlaceholder.classList = "project-name-placeholder";
 
-            const card = document.createElement("div");
-            card.className = "card border-0 rounded-0 shadow-lg";
+                    const linkPlaceholder = document.createElement("div");
+                    linkPlaceholder.classList = "project-link-placeholder";
 
-            const row = document.createElement("div");
-            row.classList = "row g-0";
+                    const descriptionPlaceholder =
+                        document.createElement("div");
+                    descriptionPlaceholder.classList = "card-text-placeholder";
 
-            const container = document.createElement("div");
-            container.classList = "container";
+                    const imgPlaceholder = document.createElement("div");
+                    imgPlaceholder.classList = "img-placeholder";
 
-            const cardBody = document.createElement("div");
-            cardBody.classList = "card-body";
+                    const project = document.createElement("div");
+                    project.className = "project w-100";
 
-            const heading = document.createElement("div");
-            heading.className = "heading";
+                    const card = document.createElement("div");
+                    card.className = "card border-0 rounded-0 shadow-lg";
 
-            const name = document.createElement("h3");
-            name.classList = "project-name text-capitalize fw-bold";
-            name.innerHTML = result.name;
+                    const row = document.createElement("div");
+                    row.classList = "row g-0";
 
-            const link = document.createElement("a");
-            link.className = "project-link fw-bold";
-            link.href = result.link;
-            link.target = "_blank";
-            link.innerHTML = result.link;
+                    const container = document.createElement("div");
+                    container.classList = "container";
 
+                    const cardBody = document.createElement("div");
+                    cardBody.classList = "card-body";
 
-            const description = document.createElement("p");
-            description.className = "card-text";
-            description.innerHTML = result.description;
+                    const heading = document.createElement("div");
+                    heading.className = "heading";
 
+                    const name = document.createElement("h3");
+                    name.classList = "project-name text-capitalize fw-bold";
+                    namePlaceholder.style.display = "none";
+                    name.innerHTML = result.name;
 
-            const imgElement = document.createElement("div");
-            imgElement.className = "img w-100 h-100";
+                    const link = document.createElement("a");
+                    link.className = "project-link fw-bold";
+                    link.href = result.link;
+                    link.target = "_blank";
+                    linkPlaceholder.style.display = "none";
+                    link.innerHTML = result.link;
 
-            const img = document.createElement("img");
-            img.className = "w-100 h-100";
-            img.alt = result.name;
-            img.src = `images/${result.imgUrl}`;
-            
-            heading.appendChild(name);
-            heading.appendChild(link);
-            
-            cardBody.appendChild(heading);
-            cardBody.appendChild(description);
+                    const description = document.createElement("p");
+                    description.className = "card-text";
+                    descriptionPlaceholder.style.display = "none";
+                    description.innerHTML = result.description;
 
-            container.appendChild(cardBody);
+                    const imgElement = document.createElement("div");
+                    imgElement.className = "img w-100 h-100";
 
-            imgElement.appendChild(img);
+                    const img = document.createElement("img");
+                    img.className = "w-100 h-100";
+                    img.alt = result.name;
+                    imgPlaceholder.style.display = "none";
+                    img.loading = "lazy";
+                    img.src = `images/${result.imgUrl}`;
 
-            row.appendChild(container);
-            row.appendChild(imgElement);
+                    heading.appendChild(name);
+                    heading.appendChild(namePlaceholder);
+                    heading.appendChild(link);
+                    heading.appendChild(linkPlaceholder);
 
-            card.appendChild(row);
-            project.appendChild(card);
-            projectsContainer.appendChild(project);
+                    cardBody.appendChild(heading);
+                    cardBody.appendChild(description);
+                    cardBody.appendChild(descriptionPlaceholder);
 
-            // console.log(projectElement);
-            // projectsContainer.append(projectElement);
-        });
-    });
+                    container.appendChild(cardBody);
+
+                    imgElement.appendChild(img);
+                    imgElement.appendChild(imgPlaceholder);
+
+                    row.appendChild(container);
+                    row.appendChild(imgElement);
+
+                    card.appendChild(row);
+                    project.appendChild(card);
+                    projectsContainer.appendChild(project);
+                });
+            });
+    } catch (error) {
+        console.log(error);
+    }
+})();
