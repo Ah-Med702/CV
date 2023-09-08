@@ -1,0 +1,49 @@
+{
+    "experience": [
+        {
+            "info": {
+                "timeIn": "2020 - present",
+                "job": "Front-End",
+                "level": "intermediate",
+                "location": "online"
+            },
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae mollitia earum temporibus rerum eum ratione, molestiae expedita saepe tempore consequatur architecto soluta nulla quibusdam eligendi officia blanditiis odio in minus? Veniam dolores tempore ut corrupti temporibus."
+        }
+    ],
+    "education": [
+        {
+            "info": {
+                "timeIn": "2020 - present",
+                "job": "Front-End",
+                "level": "intermediate",
+                "location": "online"
+            },
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae mollitia earum temporibus rerum eum ratione, molestiae expedita saepe tempore consequatur architecto soluta nulla quibusdam eligendi officia blanditiis odio in minus? Veniam dolores tempore ut corrupti temporibus."
+        }
+    ],
+    "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "SASS",
+        "React",
+        "Node.js",
+        "Next.js",
+        "bootstrap",
+        "Pug.js",
+        "TypeScript",
+        "strapi.js",
+        "TailwindCSS",
+        "Nursing 😊"
+    ],
+    "languages": [
+        {
+            "name": "Arabic",
+            "level": "native"
+        },
+        {
+            "name": "English",
+            "level": "proficient"
+        }
+    ]
+}
