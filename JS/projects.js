@@ -2,6 +2,10 @@ const projectsContainer = document.querySelector(
     ".projects-container .content"
 );
 
+const projectsHeader = document.querySelector(
+    ".projects-container .content .header h1"
+);
+
 const spinner = document.querySelector(".spinner");
 
 let loading = true;
@@ -13,8 +17,9 @@ async function fetchProjects() {
         })
         .then((res) => {
             projectsContainer.removeChild(spinner);
-            // spinner.style.display= "none";
+
             const resultArray = res.data;
+            projectsHeader.innerHTML += ` ( ${resultArray.length} )`;
             resultArray.forEach((result) => {
                 const namePlaceholder = document.createElement("div");
                 namePlaceholder.classList = "project-name-placeholder";
@@ -100,4 +105,5 @@ async function fetchProjects() {
                 projectsContainer.appendChild(project);
             });
         });
-}fetchProjects();
+}
+fetchProjects();
