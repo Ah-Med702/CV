@@ -259,9 +259,15 @@ nav .navbar-toggler .nav-toggler-icon::after {
   height: 20px;
   background-color: var(--primary-color);
 }
+.contact-container .content .popup-container {
+  display: none;
+}
 .contact-container .content form {
   width: 100%;
   font-size: 14px;
+}
+.contact-container .content form.hidden {
+  display: none !important;
 }
 .contact-container .content form input,
 .contact-container .content form textarea {
@@ -279,8 +285,15 @@ nav .navbar-toggler .nav-toggler-icon::after {
 .contact-container .content form input {
   height: 50px;
 }
+.contact-container .content form .form-control:focus {
+  box-shadow: none !important;
+}
 .contact-container .content form .btn {
-  width: 100px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.contact-container .content form .btn .spinner {
+  display: none;
 }
 
 @media (max-width: 767px) {

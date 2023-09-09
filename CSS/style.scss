@@ -288,9 +288,15 @@ nav {
                 background-color: var(--primary-color);
             }
         }
+        .popup-container{
+            display: none;
+        }
         form {
             width: 100%;
             font-size: 14px;
+            &.hidden{
+                display: none !important;
+            }
             input,
             textarea {
                 border: none;
@@ -306,8 +312,14 @@ nav {
             input {
                 height: 50px;
             }
+            .form-control:focus {
+                box-shadow: none !important;
+            }
             .btn {
-                width: 100px;
+                width: fit-content;
+                .spinner{
+                    display: none;
+                }
             }
         }
     }
