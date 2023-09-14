@@ -37,6 +37,12 @@
             "description": "todo list with modern design, complete and clear completed todos with filter"
         },
         {
+            "name": "interactive card details",
+            "link": "https://bondok-interactive-card-details.vercel.app",
+            "imgUrl": "interactive-card-details.png",
+            "description": "interactive card details to check visa card if valid and add it"
+        },
+        {
             "name": "memory game",
             "link": "https://bondok-memory-game.vercel.app",
             "imgUrl": "memory-game.png",
